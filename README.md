@@ -1,1 +1,1 @@
-# video_game_project
+# videogame_api
