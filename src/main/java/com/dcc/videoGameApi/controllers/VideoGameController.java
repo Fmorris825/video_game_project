@@ -13,7 +13,6 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class VideoGameController {
-
     @Autowired
     private VideoGameService service;
 
@@ -21,6 +20,13 @@ public class VideoGameController {
     @GetMapping("/count")
     public long GetCount(){
         return service.GetCountOfGames();
+    }
+
+    @GetMapping("/all")
+    public List<VideoGame> GetAllVideoGames() {return service.GetAllVideoGames();}
+
+    @GetMapping("/getById/{id}")
+    public VideoGame GetSingleGame(@PathVariable int id) { return  service.GetSingleGame(id);
     }
 
 }
